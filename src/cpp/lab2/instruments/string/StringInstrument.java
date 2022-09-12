@@ -14,4 +14,10 @@ public class StringInstrument extends Instrument {
     public String play() {
         return "You are playing a string instrument!";
     }
+
+    @Override
+    public String toString() {
+        return "Item: " + caption + " Type: " + getClass().getName()  + " Production: " + yearOfProduction
+                + " Price: " + price + " Strings: " + stringsCount;
+    }
 }

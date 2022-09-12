@@ -9,10 +9,4 @@ public class Guitar extends StringInstrument{
     public String play() {
         return "You are playing the guitar";
     }
-
-    @Override
-    public String toString() {
-        return "\nType: " + getClass().getName() + "\nCaption: " + caption + "\nYear: " + yearOfProduction
-                + "\nPrice: " + price + "\nStrings: " + stringsCount;
-    }
 }
