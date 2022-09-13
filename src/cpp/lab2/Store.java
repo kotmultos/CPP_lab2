@@ -23,15 +23,13 @@ public class Store {
 
         List<Instrument> instrumentList = DataManager.getMockData();
 
-        System.out.println("Content of the shop:");
-        DisplayManger.display(instrumentList);
+//        System.out.println("Content of the shop:");
+//        DisplayManger.display(instrumentList);
 
-        System.out.println("Search for type:");
-        SearchForTypeDemo(instrumentList);
+//        SearchForTypeDemo(instrumentList);      // пошук за типом
+//        SearchForBandSetDemo(instrumentList);   // пошук інструментів для гурту
 
-        System.out.println("Content of the Search for band:");
-        SearchForBandSet(instrumentList);
-
+        SortDemo(instrumentList);
     }
 
     public static void SearchForTypeDemo(List<Instrument> list) {
@@ -40,9 +38,17 @@ public class Store {
         DisplayManger.display(res);
     }
 
-    public static void SearchForBandSet(List<Instrument> list) {
+    public static void SearchForBandSetDemo(List<Instrument> list) {
         var forBand = SearchManager.searchForBandSet(list);
         System.out.println("What we propose to a band:");
         DisplayManger.display(forBand);
+    }
+
+    public static void SortDemo(List<Instrument> list){
+        var sortedByTypeDescending = SortManager.sortDescendingByType(list);
+        DisplayManger.display(sortedByTypeDescending);
+
+        var sortedByTypeAscending = SortManager.sortAscendingByType(sortedByTypeDescending);
+        DisplayManger.display(sortedByTypeAscending);
     }
 }

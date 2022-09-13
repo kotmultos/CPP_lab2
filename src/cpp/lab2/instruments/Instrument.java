@@ -16,4 +16,8 @@ public abstract class Instrument implements IPlayable{
         return String.format("%-25s|%-25s|%-25s|%-25s|%-25s|", getClass().getSuperclass().getSimpleName(),
                 getClass().getSimpleName(), caption, yearOfProduction, price);
     }
+
+    public double getPrice() {
+        return price;
+    }
 }

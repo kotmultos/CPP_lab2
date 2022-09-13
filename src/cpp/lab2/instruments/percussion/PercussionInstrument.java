@@ -2,7 +2,6 @@ package cpp.lab2.instruments.percussion;
 
 import cpp.lab2.instruments.Instrument;
 
-
 public abstract class PercussionInstrument extends Instrument {
     protected double diameter;
 

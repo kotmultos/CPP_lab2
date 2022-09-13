@@ -1,11 +1,5 @@
 package cpp.lab2.instruments;
 
-import cpp.lab2.instruments.keyboard.Synthesizer;
-import cpp.lab2.instruments.percussion.BassDrum;
-import cpp.lab2.instruments.percussion.DrumPlate;
-import cpp.lab2.instruments.percussion.SnareDrum;
-import cpp.lab2.instruments.string.Bass;
-
 import java.util.ArrayList;
 import java.util.List;
 
