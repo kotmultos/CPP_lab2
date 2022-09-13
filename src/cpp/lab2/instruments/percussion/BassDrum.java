@@ -3,6 +3,7 @@ package cpp.lab2.instruments.percussion;
 public class BassDrum extends PercussionInstrument{
     public BassDrum(int yearOfProduction, double price, String caption, double diameter) {
         super(yearOfProduction, price, caption, diameter);
+        this.diameter = diameter;
     }
 
     @Override
