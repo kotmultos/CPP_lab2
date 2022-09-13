@@ -1,9 +1,9 @@
 package cpp.lab2.instruments;
 
 public abstract class Instrument implements IPlayable{
-    protected int yearOfProduction;
-    protected double price;
-    protected String caption;
+    private int yearOfProduction;
+    private double price;
+    private String caption;
 
     public Instrument(int yearOfProduction, double price, String caption) {
         this.yearOfProduction = yearOfProduction;
@@ -13,6 +13,7 @@ public abstract class Instrument implements IPlayable{
 
     @Override
     public String toString() {
-        return String.format("%-25s|%-25s|%-25s|%-25s|", getClass().getSimpleName(), caption, yearOfProduction, price);
+        return String.format("%-25s|%-25s|%-25s|%-25s|%-25s|", getClass().getSuperclass().getSimpleName(),
+                getClass().getSimpleName(), caption, yearOfProduction, price);
     }
 }

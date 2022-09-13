@@ -10,11 +10,6 @@ public abstract class StringInstrument extends Instrument {
         this.stringsCount = stringsCount;
     }
 
-//    @Override
-//    public String getSound() {
-//        return "You are playing a string instrument!";
-//    }
-
     @Override
     public String toString() {
         return super.toString() + "Strings: " + stringsCount;

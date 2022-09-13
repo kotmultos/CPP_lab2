@@ -4,12 +4,9 @@ import java.util.List;
 
 public class DisplayManger {
     public static void display(List<Instrument> list) {
-
-//        System.out.println("Type\tCaption\tPrice\tProduction year");
-        System.out.printf("%-25s|%-25s|%-25s|%-25s|\n","Type", "Caption", "Price", "Production year");
+        System.out.printf("\n%-25s|%-25s|%-25s|%-25s|%-25s|Additional info\n", "Type","Instrument", "Caption", "Production year", "Price");
         for (Instrument elem : list) {
             System.out.println(elem);
-//            System.out.println(elem.getSound());
         }
     }
 }

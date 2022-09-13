@@ -13,31 +13,36 @@ import cpp.lab2.instruments.string.*;
 //import cpp.lab2.instruments.string.Guitar;
 //import cpp.lab2.instruments.string.Violin;
 
+import javax.swing.plaf.synth.SynthSplitPaneUI;
+import java.lang.constant.DynamicCallSiteDesc;
 import java.util.Arrays;
 import java.util.List;
 
 public class Store {
     public static void main(String[] args) {
 
-        Instrument a = new Guitar(2020, 120.35, "Cort 10'000");
-        Instrument b = new Bass(2020, 120.35, "Bass 10'000");
-        Instrument c = new Violin(2020, 120.35, "Violin 300");
-        Instrument d = new Piano(2020, 120.35, "piano 300", 66);
-        Instrument e = new Pianoforte(2020, 120.35, "pianoforte 300", 66);
-        Instrument f = new Synthesizer(2020, 120.35, "synthesizer 500", 88);
-        Instrument g = new BassDrum(2020, 120.35, "synthesizer 500", 43.21);
-        Instrument h = new SnareDrum(2020, 120.35, "synthesizer 500", 22.11);
-        Instrument i = new DrumPlate(2020, 120.35, "synthesizer 500", 30.456);
+        List<Instrument> instrumentList = DataManager.getMockData();
 
-        Instrument [] arr = {a,b,c,d,e,f,g,h,i};
+        System.out.println("Content of the shop:");
+        DisplayManger.display(instrumentList);
 
-        List<Instrument> instrumentList = Arrays.asList(arr);
+        System.out.println("Search for type:");
+        SearchForTypeDemo(instrumentList);
 
-//        for (Instrument elem:arr) {
-//            System.out.println(elem.getSound());
-//        }
+        System.out.println("Content of the Search for band:");
+        SearchForBandSet(instrumentList);
 
-       DisplayManger.display(instrumentList);
+    }
 
+    public static void SearchForTypeDemo(List<Instrument> list) {
+        var res = SearchManager.searchForType(list, "PercussionInstrument");
+        System.out.println("Percussion Instruments: ");
+        DisplayManger.display(res);
+    }
+
+    public static void SearchForBandSet(List<Instrument> list) {
+        var forBand = SearchManager.searchForBandSet(list);
+        System.out.println("What we propose to a band:");
+        DisplayManger.display(forBand);
     }
 }
