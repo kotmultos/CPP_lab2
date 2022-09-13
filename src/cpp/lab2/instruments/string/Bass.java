@@ -6,9 +6,8 @@ public class Bass extends StringInstrument{
     }
 
     @Override
-    public String play() {
-        return "Boom, boom! You are playing on bass guitar";
+    public String getSound() {
+        return "Boom, boom! You are playing the bass guitar";
     }
-
 
 }

@@ -6,7 +6,7 @@ public class Guitar extends StringInstrument{
     }
 
     @Override
-    public String play() {
-        return "You are playing the guitar";
+    public String getSound() {
+        return "Rock! You are playing the guitar";
     }
 }
