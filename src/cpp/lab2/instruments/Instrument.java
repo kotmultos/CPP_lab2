@@ -13,7 +13,6 @@ public abstract class Instrument implements IPlayable{
 
     @Override
     public String toString() {
-        return "Item: " + caption + " Type: " + getClass().getName()  + " Production: " + yearOfProduction
-                + " Price: " + price;
+        return String.format("%-25s|%-25s|%-25s|%-25s|", getClass().getSimpleName(), caption, yearOfProduction, price);
     }
 }

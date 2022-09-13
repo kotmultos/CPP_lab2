@@ -2,11 +2,6 @@ package cpp.lab2.instruments.keyboard;
 
 import cpp.lab2.instruments.Instrument;
 
-
-// синтезатор
-// піаніно
-// рояль
-
 public abstract class KeyboardInstrument extends Instrument {
     protected int keysCount;
 
@@ -17,6 +12,6 @@ public abstract class KeyboardInstrument extends Instrument {
 
     @Override
     public String toString() {
-        return super.toString() + "\tkeys: " + keysCount;
+        return super.toString() + "Keys: " +  keysCount;
     }
 }
