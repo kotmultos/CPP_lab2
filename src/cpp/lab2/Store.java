@@ -45,10 +45,17 @@ public class Store {
     }
 
     public static void SortDemo(List<Instrument> list){
-        var sortedByTypeDescending = SortManager.sortDescendingByType(list);
+        var sortManager = new SortManager();
+        var sortedByTypeDescending = sortManager.sortDescendingByType(list);
         DisplayManger.display(sortedByTypeDescending);
 
-        var sortedByTypeAscending = SortManager.sortAscendingByType(sortedByTypeDescending);
+        var sortedByTypeAscending = sortManager.sortAscendingByType(sortedByTypeDescending);
         DisplayManger.display(sortedByTypeAscending);
+
+        var sortedByPriceAscending = sortManager.sortAscendingByType(sortedByTypeAscending);
+        DisplayManger.display(sortedByPriceAscending);
+
+        var sortedByTypePriceDescending = sortManager.sortAscendingByType(sortedByPriceAscending);
+        DisplayManger.display(sortedByTypePriceDescending);
     }
 }
