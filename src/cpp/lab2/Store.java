@@ -23,39 +23,44 @@ public class Store {
 
         List<Instrument> instrumentList = DataManager.getMockData();
 
-//        System.out.println("Content of the shop:");
-//        DisplayManger.display(instrumentList);
+        System.out.println("\nContent of the shop:");
+        DisplayManger.display(instrumentList);
 
-//        SearchForTypeDemo(instrumentList);      // пошук за типом
-//        SearchForBandSetDemo(instrumentList);   // пошук інструментів для гурту
+        SearchForTypeDemo(instrumentList);      // пошук за типом
+        SearchForBandSetDemo(instrumentList);   // пошук інструментів для гурту
 
         SortDemo(instrumentList);
     }
 
     public static void SearchForTypeDemo(List<Instrument> list) {
         var res = SearchManager.searchForType(list, "PercussionInstrument");
-        System.out.println("Percussion Instruments: ");
+        System.out.println("\nPercussion Instruments: ");
         DisplayManger.display(res);
     }
 
     public static void SearchForBandSetDemo(List<Instrument> list) {
         var forBand = SearchManager.searchForBandSet(list);
-        System.out.println("What we propose to a band:");
+        System.out.println("\nWhat we propose to a band:");
         DisplayManger.display(forBand);
     }
 
     public static void SortDemo(List<Instrument> list){
         var sortManager = new SortManager();
+
         var sortedByTypeDescending = sortManager.sortDescendingByType(list);
+        System.out.println("\nSorted by type:");
         DisplayManger.display(sortedByTypeDescending);
 
         var sortedByTypeAscending = sortManager.sortAscendingByType(sortedByTypeDescending);
+        System.out.println("\nSorted by type (reverse order):");
         DisplayManger.display(sortedByTypeAscending);
 
-        var sortedByPriceAscending = sortManager.sortAscendingByType(sortedByTypeAscending);
+        var sortedByPriceAscending = sortManager.sortAscendingByPrice(sortedByTypeAscending);
+        System.out.println("\nSorted by price:");
         DisplayManger.display(sortedByPriceAscending);
 
-        var sortedByTypePriceDescending = sortManager.sortAscendingByType(sortedByPriceAscending);
-        DisplayManger.display(sortedByTypePriceDescending);
+        var sortedByPriceDescending = sortManager.sortDescendingByPrice(sortedByPriceAscending);
+        System.out.println("\nSorted by price (reverse order):");
+        DisplayManger.display(sortedByPriceDescending);
     }
 }

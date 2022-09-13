@@ -35,7 +35,7 @@ public class SortManager {
     public static List<Instrument> sortDescendingByPrice(List<Instrument> list) {
         var res = new ArrayList<>(list);
 
-        res.sort(new ComparatorStaticInnerClass());
+        res.sort(new SortManager.ComparatorStaticInnerClass());
 
         return res;
     }
@@ -48,8 +48,8 @@ public class SortManager {
 
         res.sort(new Comparator<Instrument>() {
             public int compare(Instrument i1, Instrument i2) {
-                return i1.getClass().getSuperclass().getSimpleName().
-                        compareTo(i2.getClass().getSuperclass().getSimpleName());
+                return i2.getClass().getSuperclass().getSimpleName().
+                        compareTo(i1.getClass().getSuperclass().getSimpleName());
             }
         } );
 
@@ -61,8 +61,8 @@ public class SortManager {
         var res = new ArrayList<>(list);
 
         res.sort((Instrument i1, Instrument i2) ->
-                i2.getClass().getSuperclass().getSimpleName().
-                        compareTo(i1.getClass().getSuperclass().getSimpleName()));
+                i1.getClass().getSuperclass().getSimpleName().
+                        compareTo(i2.getClass().getSuperclass().getSimpleName()));
 
         return res;
     }

@@ -16,7 +16,7 @@ public class DataManager {
         res.add(new Bass(2017, 11_190, "Yamaha TRBX-174 RM"));
         res.add(new Violin(2019, 3_085, "Rafaga AF 1/4"));
         res.add(new Violin(2019, 3_364, "Maxtone TV3/4A LL"));
-        res.add(new Piano(2019, 166_335, "Pearl River UP118M Mahogany+B", 88));
+        res.add(new Piano(2019, 166_335, "Pearl River UP118M", 88));
         res.add(new Piano(2013, 387_828, "Yamaha U1 PDAW", 88));
         res.add(new Pianoforte(2022, 859_041, "Yamaha GC1 PE", 88));
         res.add(new Pianoforte(2016, 548_079, "Kawai GL10 MEP", 88));
